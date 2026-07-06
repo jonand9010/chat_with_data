@@ -1,0 +1,27 @@
+entities:
+  engine:
+    key: engine_id
+    description: One turbofan engine observed over operating cycles.
+
+time:
+  primary_axis: cycle
+
+measures:
+  rul:
+    column: rul
+    description: Remaining useful life measured in cycles.
+  health_index:
+    derived: true
+    description: Normalized degradation score.
+
+dimensions:
+  engine_id:
+    column: engine_id
+  operating_regime:
+    derived: true
+
+tools:
+  summarize_engine:
+    description: Summarize the health and degradation pattern of one engine.
+  rank_degrading_engines:
+    description: Rank engines by degradation trend.
